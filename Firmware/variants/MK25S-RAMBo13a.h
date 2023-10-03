@@ -8,19 +8,19 @@
  *------------------------------------*/
 
 // Printer revision
-#define PRINTER_TYPE PRINTER_MK25
-#define PRINTER_NAME PRINTER_MK25_NAME
-#define PRINTER_NAME_ALTERNATE PRINTER_MK25S_NAME //the other similar printer to this.
-#define PRINTER_MMU_TYPE PRINTER_MK25_MMU2
-#define PRINTER_MMU_NAME PRINTER_MK25_MMU2_NAME
-#define FILAMENT_SIZE "1_75mm_MK25"
+#define PRINTER_TYPE PRINTER_MK25S
+#define PRINTER_NAME PRINTER_MK25S_NAME
+#define PRINTER_NAME_ALTERNATE PRINTER_MK25_NAME //the other similar printer to this.
+#define PRINTER_MMU_TYPE PRINTER_MK25S_MMU2
+#define PRINTER_MMU_NAME PRINTER_MK25S_MMU2_NAME
+#define FILAMENT_SIZE "1_75mm_MK25S"
 #define NOZZLE_TYPE "E3Dv6full"
 
 // Printer name
-#define CUSTOM_MENDEL_NAME "Prusa i3 MK2.5"
+#define CUSTOM_MENDEL_NAME "Prusa i3 MK2.5S"
 
 // Electronics
-#define MOTHERBOARD BOARD_RAMBO_MINI_1_0
+#define MOTHERBOARD BOARD_RAMBO_MINI_1_3
 
 #define HEATBED_V2
 #define STEEL_SHEET
@@ -91,6 +91,7 @@
 #define DEFAULT_MAX_ACCELERATION      {1000, 1000, 200, 5000}  // (mm/sec^2) max acceleration (M201)
 #define DEFAULT_MAX_ACCELERATION_SILENT     {960, 960, 200, 5000}    // (mm/sec^2) max acceleration (M201), silent mode
 
+
 #define DEFAULT_ACCELERATION          1250   // X, Y, Z and E max acceleration in mm/s^2 for printing moves (M204P)
 #define DEFAULT_RETRACT_ACCELERATION  1250   // X, Y, Z and E max acceleration in mm/s^2 for retracts (M204R)
 #define DEFAULT_TRAVEL_ACCELERATION   1250   // X, Y, Z and E max acceleration in mm/s^2 for travels (M204T)
@@ -121,7 +122,7 @@
 
 // Filament sensor
 #define FILAMENT_SENSOR
-#define FILAMENT_SENSOR_TYPE FSENSOR_PAT9125
+#define FILAMENT_SENSOR_TYPE FSENSOR_IR
 
 #define DEBUG_DCODE2
 #define DEBUG_DCODE3
@@ -219,7 +220,7 @@
 #define FILAMENTCHANGE_YPOS 0
 #define FILAMENTCHANGE_ZADD 2
 #define FILAMENTCHANGE_FIRSTRETRACT -2
-#define FILAMENTCHANGE_FINALRETRACT -80
+#define FILAMENTCHANGE_FINALRETRACT 0
 
 #define FILAMENTCHANGE_FIRSTFEED 70 //E distance in mm for fast filament loading sequence used used in filament change (M600)
 #define FILAMENTCHANGE_FINALFEED 25 //E distance in mm for slow filament loading sequence used used in filament change (M600) and filament load (M701) 
@@ -272,12 +273,6 @@
 #ifdef MESH_BED_LEVELING
 
 #define MBL_Z_STEP 0.01
-
-// Mesh definitions
-#define MESH_MIN_X 24
-#define MESH_MAX_X 228
-#define MESH_MIN_Y 6
-#define MESH_MAX_Y 210
 
 // Mesh upsample definition
 #define MESH_NUM_X_POINTS 7
@@ -381,6 +376,10 @@
 #define FLEX_PREHEAT_HOTEND_TEMP 240
 #define FLEX_PREHEAT_HPB_TEMP 50
 
+#define LCD_JUMP_HOTEND_TEMP 200
+#define LCD_JUMP_BED_TEMP 50
+#define LCD_JUMP_FAN_SPEED 127
+
 /*------------------------------------
  THERMISTORS SETTINGS
  *------------------------------------*/
@@ -444,9 +443,6 @@
 #define MAX_BED_TEMP_CALIBRATION 50
 #define MAX_HOTEND_TEMP_CALIBRATION 50
 
-#define MAX_E_STEPS_PER_UNIT 250
-#define MIN_E_STEPS_PER_UNIT 100
-
 #define Z_BABYSTEP_MIN -3999
 #define Z_BABYSTEP_MAX 0
 
@@ -475,11 +471,19 @@
 
 //#define SUPPORT_VERBOSITY
 
-#define MMU_CONFIG_FILE "mmu2/variants/config_MMU2.h"
+#define MMU_CONFIG_FILE "mmu2/variants/config_MMU2S.h"
 #define MMU_FILAMENT_COUNT 5
 #define MMU_FORCE_STEALTH_MODE
 #define MMU_DEBUG //print communication between MMU and printer on serial
 #define MMU_HAS_CUTTER
+
+// This is experimental feature requested by our test department.
+// There is no known use for ordinary user. If enabled by this macro
+// and enabled from printer menu (not enabled by default). It cuts filament
+// every time when switching filament from gcode. MMU_HAS_CUTTER needs to be
+// defined.
+
+//#define MMU_ALWAYS_CUT
 
 // MMU Error pause position
 #define MMU_ERR_X_PAUSE_POS 125
@@ -492,9 +496,9 @@
    cost of performance*/
 #define DEFAULT_MM_PER_ARC_SEGMENT     1.0f // REQUIRED - The enforced maximum length of an arc segment
 #define DEFAULT_MIN_MM_PER_ARC_SEGMENT 0.5f //the enforced minimum length of an interpolated segment
-/*  MIN_MM_PER_ARC_SEGMENT Must be smaller than MM_PER_ARC_SEGMENT.  Only has an effect if MIN_ARC_SEGMENTS > 0
-    or ARC_SEGMENTS_PER_SEC > 0 .  If both MIN_ARC_SEGMENTS and ARC_SEGMENTS_PER_SEC is defined, the minimum
-    calculated segment length is used. */
+   /*  MIN_MM_PER_ARC_SEGMENT Must be smaller than MM_PER_ARC_SEGMENT.  Only has an effect if MIN_ARC_SEGMENTS > 0
+       or ARC_SEGMENTS_PER_SEC > 0 .  If both MIN_ARC_SEGMENTS and ARC_SEGMENTS_PER_SEC is defined, the minimum
+       calculated segment length is used. */
 #define DEFAULT_MIN_ARC_SEGMENTS 20 // The enforced minimum segments in a full circle of the same radius.  Set to 0 to disable
 #define DEFAULT_ARC_SEGMENTS_PER_SEC 0 // Use feedrate to choose segment length. Set to 0 to disable
 
