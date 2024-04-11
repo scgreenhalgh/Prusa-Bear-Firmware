@@ -287,11 +287,17 @@
 // #define TMC2130_CURRENTS_R {32, 40, 63, 60}   // default running currents for all axes
 // #define TMC2130_CURRENTS_R_HOME {16, 20, 35, 30}  // homing running currents for all axes
 
-//Midway between above values
-#define TMC2130_CURRENTS_H {26, 30, 45, 40}  // default holding currents for all axes
-#define TMC2130_CURRENTS_FARM 46             // E 805 mA peak for ECool/farm mode
-#define TMC2130_CURRENTS_R {26, 30, 45, 40}  // default running currents for all axes
-#define TMC2130_CURRENTS_R_HOME {16, 20, 35, 30}  // homing running currents for all axes
+//Midway between above values better, but still too hot
+// #define TMC2130_CURRENTS_H {26, 30, 45, 40}  // default holding currents for all axes
+// #define TMC2130_CURRENTS_FARM 46             // E 805 mA peak for ECool/farm mode
+// #define TMC2130_CURRENTS_R {26, 30, 45, 40}  // default running currents for all axes
+// #define TMC2130_CURRENTS_R_HOME {16, 20, 35, 30}  // homing running currents for all axes
+
+// Very slightly higher (5 higher)
+#define TMC2130_CURRENTS_H {21, 25, 40, 35}  // default holding currents for all axes
+#define TMC2130_CURRENTS_FARM 41             // E 805 mA peak for ECool/farm mode
+#define TMC2130_CURRENTS_R {21, 25, 40, 35}  // default running currents for all axes
+#define TMC2130_CURRENTS_R_HOME {13, 15, 25, 23}  // homing running currents for all axes
 
 #define TMC2130_STEALTH_Z
 #define TMC2130_DEDGE_STEPPING
