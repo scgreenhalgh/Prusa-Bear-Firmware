@@ -281,10 +281,16 @@
 // #define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
 // #define TMC2130_CURRENTS_R {16, 20, 35, 30}  // default running currents for all axes
 // #define TMC2130_CURRENTS_R_HOME {8, 10, 20, 18}  // homing running currents for all axes
-// Increased currents for Usongshine Stepper Motor 17HS4401S
-#define TMC2130_CURRENTS_H {32, 40, 63, 60}  // default holding currents for all axes
-#define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
-#define TMC2130_CURRENTS_R {32, 40, 63, 60}   // default running currents for all axes
+// Increased currents for Usongshine Stepper Motor 17HS4401S - Note this seems to cause TMC to overheat
+// #define TMC2130_CURRENTS_H {32, 40, 63, 60}  // default holding currents for all axes
+// #define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
+// #define TMC2130_CURRENTS_R {32, 40, 63, 60}   // default running currents for all axes
+// #define TMC2130_CURRENTS_R_HOME {16, 20, 35, 30}  // homing running currents for all axes
+
+//Midway between above values
+#define TMC2130_CURRENTS_H {26, 30, 45, 40}  // default holding currents for all axes
+#define TMC2130_CURRENTS_FARM 46             // E 805 mA peak for ECool/farm mode
+#define TMC2130_CURRENTS_R {26, 30, 45, 40}  // default running currents for all axes
 #define TMC2130_CURRENTS_R_HOME {16, 20, 35, 30}  // homing running currents for all axes
 
 #define TMC2130_STEALTH_Z
