@@ -305,24 +305,30 @@
 // #define TMC2130_CURRENTS_R {21, 25, 40, 35}  // default running currents for all axes
 // #define TMC2130_CURRENTS_R_HOME {16, 25, 35, 35}  // homing running currents for all axes
 
-// Lower Holding currents
-#define TMC2130_CURRENTS_H {16, 25, 35, 35}  // default holding currents for all axes
-#define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
-#define TMC2130_CURRENTS_R {21, 25, 40, 40}  // default running currents for all axes
-#define TMC2130_CURRENTS_R_HOME {16, 25, 35, 35}  // homing running currents for all axes
-
 // Just buping up Homing
 // #define TMC2130_CURRENTS_H {16, 20, 35, 30}  // default holding currents for all axes
 // #define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
 // #define TMC2130_CURRENTS_R {16, 20, 35, 30}  // default running currents for all axes
 // #define TMC2130_CURRENTS_R_HOME {16, 20, 35, 30}  // homing running currents for all axes
 
+// Lower Holding currents
+// #define TMC2130_CURRENTS_H {16, 25, 35, 35}  // default holding currents for all axes
+// #define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
+// #define TMC2130_CURRENTS_R {21, 25, 40, 40}  // default running currents for all axes
+// #define TMC2130_CURRENTS_R_HOME {16, 25, 35, 35}  // homing running currents for all axes
+
+// Lower Holding currents, then slightly higher extruder current and homing current
+#define TMC2130_CURRENTS_H {21, 25, 35, 35}  // default holding currents for all axes
+#define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
+#define TMC2130_CURRENTS_R {21, 25, 40, 40}  // default running currents for all axes
+#define TMC2130_CURRENTS_R_HOME {21, 25, 35, 35}  // homing running currents for all axes
+
 #define TMC2130_STEALTH_Z
 #define TMC2130_DEDGE_STEPPING
 
-//#define TMC2130_SERVICE_CODES_M910_M918
+#define TMC2130_SERVICE_CODES_M910_M918
 
-//#define TMC2130_DEBUG
+#define TMC2130_DEBUG
 //#define TMC2130_DEBUG_WR
 //#define TMC2130_DEBUG_RD
 
