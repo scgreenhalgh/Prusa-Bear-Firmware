@@ -326,7 +326,8 @@
 // Max extruder current
 #define TMC2130_CURRENTS_H {21, 25, 35, 35}  // default holding currents for all axes {X, Y, Z, E}
 #define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
-#define TMC2130_CURRENTS_R {21, 25, 35, 63}  // default running currents for all axes (Max = 63 = 0.96A)
+// #define TMC2130_CURRENTS_R {21, 25, 35, 63}  // default running currents for all axes (Max = 63 = 0.96A)
+#define TMC2130_CURRENTS_R {30, 30, 35, 55}  // default running currents for all axes (Max = 63 = 0.96A)
 #define TMC2130_CURRENTS_R_HOME {21, 25, 35, 35}  // homing running currents for all axes
 
 
