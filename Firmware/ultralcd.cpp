@@ -2188,12 +2188,14 @@ uint8_t lcd_alright() {
         if (lcd_encoder)
         {
 
-            if (lcd_encoder > 0 ) {
+            if (lcd_encoder < 0 ) {
                 // Rotating knob counter clockwise
-                cursor_pos--;
-            } else if (lcd_encoder < 0) {
-                // Rotating knob clockwise
+                //cursor_pos--;
                 cursor_pos++;
+            } else if (lcd_encoder > 0) {
+                // Rotating knob clockwise
+                //cursor_pos++;
+                cursor_pos--;
             }
             if (cursor_pos > 3) {
                 cursor_pos = 3;
