@@ -277,15 +277,64 @@
 #define TMC2130_SG_THRS_HOME {3, 3, TMC2130_SG_THRS_Z, TMC2130_SG_THRS_E}
 
 //new settings is possible for vsense = 1, running current value > 31 set vsense to zero and shift both currents by 1 bit right (Z axis only)
-#define TMC2130_CURRENTS_H {16, 20, 35, 30}  // default holding currents for all axes
+// #define TMC2130_CURRENTS_H {16, 20, 35, 30}  // default holding currents for all axes
+// #define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
+// #define TMC2130_CURRENTS_R {16, 20, 35, 30}  // default running currents for all axes
+// #define TMC2130_CURRENTS_R_HOME {8, 10, 20, 18}  // homing running currents for all axes
+// Increased currents for Usongshine Stepper Motor 17HS4401S - Note this seems to cause TMC to overheat
+// #define TMC2130_CURRENTS_H {32, 40, 63, 60}  // default holding currents for all axes
+// #define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
+// #define TMC2130_CURRENTS_R {32, 40, 63, 60}   // default running currents for all axes
+// #define TMC2130_CURRENTS_R_HOME {16, 20, 35, 30}  // homing running currents for all axes
+
+//Midway between above values better, but still too hot
+// #define TMC2130_CURRENTS_H {26, 30, 45, 40}  // default holding currents for all axes
+// #define TMC2130_CURRENTS_FARM 46             // E 805 mA peak for ECool/farm mode
+// #define TMC2130_CURRENTS_R {26, 30, 45, 40}  // default running currents for all axes
+// #define TMC2130_CURRENTS_R_HOME {16, 20, 35, 30}  // homing running currents for all axes
+
+// Very slightly higher (5 higher)
+// #define TMC2130_CURRENTS_H {21, 25, 40, 35}  // default holding currents for all axes
+// #define TMC2130_CURRENTS_FARM 41             // E 805 mA peak for ECool/farm mode
+// #define TMC2130_CURRENTS_R {21, 25, 40, 35}  // default running currents for all axes
+// #define TMC2130_CURRENTS_R_HOME {13, 15, 25, 23}  // homing running currents for all axes
+
+// Above homing was a little low
+// #define TMC2130_CURRENTS_H {21, 25, 40, 35}  // default holding currents for all axes
+// #define TMC2130_CURRENTS_FARM 41             // E 805 mA peak for ECool/farm mode
+// #define TMC2130_CURRENTS_R {21, 25, 40, 35}  // default running currents for all axes
+// #define TMC2130_CURRENTS_R_HOME {16, 25, 35, 35}  // homing running currents for all axes
+
+// Just buping up Homing
+// #define TMC2130_CURRENTS_H {16, 20, 35, 30}  // default holding currents for all axes
+// #define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
+// #define TMC2130_CURRENTS_R {16, 20, 35, 30}  // default running currents for all axes
+// #define TMC2130_CURRENTS_R_HOME {16, 20, 35, 30}  // homing running currents for all axes
+
+// Lower Holding currents
+// #define TMC2130_CURRENTS_H {16, 25, 35, 35}  // default holding currents for all axes
+// #define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
+// #define TMC2130_CURRENTS_R {21, 25, 40, 40}  // default running currents for all axes
+// #define TMC2130_CURRENTS_R_HOME {16, 25, 35, 35}  // homing running currents for all axes
+
+// Lower Holding currents, then slightly higher extruder current and homing current
+// #define TMC2130_CURRENTS_H {21, 25, 35, 35}  // default holding currents for all axes
+// #define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
+// #define TMC2130_CURRENTS_R {21, 25, 35, 55}  // default running currents for all axes
+// #define TMC2130_CURRENTS_R_HOME {21, 25, 35, 35}  // homing running currents for all axes
+
+// Max extruder current
+#define TMC2130_CURRENTS_H {20, 20, 30, 35}  // default holding currents for all axes {X, Y, Z, E}
 #define TMC2130_CURRENTS_FARM 36             // E 805 mA peak for ECool/farm mode
-#define TMC2130_CURRENTS_R {16, 20, 35, 30}  // default running currents for all axes
-#define TMC2130_CURRENTS_R_HOME {8, 10, 20, 18}  // homing running currents for all axes
+// #define TMC2130_CURRENTS_R {21, 25, 35, 63}  // default running currents for all axes (Max = 63 = 0.96A)
+#define TMC2130_CURRENTS_R {30, 30, 35, 55}  // default running currents for all axes (Max = 63 = 0.96A)
+#define TMC2130_CURRENTS_R_HOME {25, 25, 35, 35}  // homing running currents for all axes
+
 
 #define TMC2130_STEALTH_Z
 #define TMC2130_DEDGE_STEPPING
 
-//#define TMC2130_SERVICE_CODES_M910_M918
+#define TMC2130_SERVICE_CODES_M910_M918
 
 //#define TMC2130_DEBUG
 //#define TMC2130_DEBUG_WR
