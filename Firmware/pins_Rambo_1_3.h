@@ -98,8 +98,14 @@
 #define LCD_PINS_D7         71
 
 //buttons are directly attached using AUX-2
-#define BTN_EN1                72
-#define BTN_EN2                14
+
+//Original Pin Direction
+// #define BTN_EN1                72
+// #define BTN_EN2                14
+
+//Reversed pin direction
+#define BTN_EN1                14
+#define BTN_EN2                72
 #define BTN_ENC                 9  // the click
 
 #define SDCARDDETECT           15
