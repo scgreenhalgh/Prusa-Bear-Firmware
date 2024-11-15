@@ -424,7 +424,7 @@
 
 #define THERMAL_MODEL_Ta_corr -7     // Default ambient temperature correction
 
-#include "thermal_model/e3d_REVO.h"
+#include "thermal_model/clone_e3d_REVO.h"
 #define THERMAL_MODEL_DEFAULT E3D_REVO // Default E3D REVO model parameters
 
 /*------------------------------------
