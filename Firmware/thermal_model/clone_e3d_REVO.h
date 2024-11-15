@@ -18,6 +18,52 @@
 // fall-back resistance vector (R0-15)
 #define THERMAL_MODEL_E3D_REVO_Rv {THERMAL_MODEL_E3D_REVO_R, 23.9, 22.5, 19.6, 19.0, 18.3, 17.7, 17.1, 16.8, 16.5, 16.3, 16.0, 15.9, 15.7, 15.6, 15.4}
 
+// Send: M301
+// Recv: ok p:40.98 i:7.99 d:52.56
+
+// Original values from Firmware/thermal_model/e3d_REVO.h
+// Send: M310
+// Recv: echo:Thermal Model settings:
+// Recv: echo:  M310 I0 R25.30
+// Recv: echo:  M310 I1 R23.90
+// Recv: echo:  M310 I2 R22.50
+// Recv: echo:  M310 I3 R19.60
+// Recv: echo:  M310 I4 R19.00
+// Recv: echo:  M310 I5 R18.30
+// Recv: echo:  M310 I6 R17.70
+// Recv: echo:  M310 I7 R17.10
+// Recv: echo:  M310 I8 R16.80
+// Recv: echo:  M310 I9 R16.50
+// Recv: echo:  M310 I10 R16.30
+// Recv: echo:  M310 I11 R16.00
+// Recv: echo:  M310 I12 R15.90
+// Recv: echo:  M310 I13 R15.70
+// Recv: echo:  M310 I14 R15.60
+// Recv: echo:  M310 I15 R15.40
+// Recv: echo:  M310 P40.00 U-0.0014 V1.05 C8.77 D0.1500 L270 S1 B1 E1.23 W0.85 T-7.00
+// Recv: ok
+
+// New values from Firmware/thermal_model/e3d_REVO.h post PID tuning.
+// Send: M310
+// Recv: echo:Thermal Model settings:
+// Recv: echo:  M310 I0 R16.95
+// Recv: echo:  M310 I1 R16.22
+// Recv: echo:  M310 I2 R15.49
+// Recv: echo:  M310 I3 R14.03
+// Recv: echo:  M310 I4 R13.62
+// Recv: echo:  M310 I5 R13.21
+// Recv: echo:  M310 I6 R12.80
+// Recv: echo:  M310 I7 R12.38
+// Recv: echo:  M310 I8 R12.18
+// Recv: echo:  M310 I9 R11.97
+// Recv: echo:  M310 I10 R11.77
+// Recv: echo:  M310 I11 R11.56
+// Recv: echo:  M310 I12 R11.46
+// Recv: echo:  M310 I13 R11.35
+// Recv: echo:  M310 I14 R11.25
+// Recv: echo:  M310 I15 R11.15
+// Recv: echo:  M310 P40.00 U-0.0014 V1.05 C11.76 D0.1500 L270 S1 B1 E1.23 W0.85 T-7.00
+
 // OLD
 // Recv: echo:Thermal Model settings:
 // Recv: echo:  M310 I0 R12.98
@@ -57,3 +103,6 @@
 // Recv: echo:  M310 I14 R8.58
 // Recv: echo:  M310 I15 R8.49
 // Recv: echo:  M310 P38.00 U0.0000 V1.00 C12.28 D0.0650 L2160 S1 B1 E1.74 W1.20 T-7.00
+
+
+
