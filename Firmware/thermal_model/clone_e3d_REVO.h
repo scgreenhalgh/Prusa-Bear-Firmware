@@ -2,9 +2,9 @@
 
 #define THERMAL_MODEL_E3D_REVO_VER 1      // model parameters version
 
-#define THERMAL_MODEL_E3D_REVO_P 38.      // heater power (W)
-#define THERMAL_MODEL_E3D_REVO_U 0.0000  // linear temperature coefficient (W/K/power)
-#define THERMAL_MODEL_E3D_REVO_V 1.00     // linear temperature intercept (W/power)
+#define THERMAL_MODEL_E3D_REVO_P 40.      // heater power (W)
+#define THERMAL_MODEL_E3D_REVO_U -0.0014  // linear temperature coefficient (W/K/power)
+#define THERMAL_MODEL_E3D_REVO_V 1.05     // linear temperature intercept (W/power)
 
 #define THERMAL_MODEL_E3D_REVO_C 11.76     // initial guess for heatblock capacitance (J/K)
 #define THERMAL_MODEL_E3D_REVO_R 16.95     // initial guess for heatblock resistance (K/W)
@@ -12,7 +12,7 @@
 #define THERMAL_MODEL_E3D_REVO_fS 0.15    // sim. 1st order IIR filter factor (f=100/27)
 #define THERMAL_MODEL_E3D_REVO_LAG 270    // sim. response lag (ms, 0-2160)
 
-#define THERMAL_MODEL_E3D_REVO_W 1.20     // Default warning threshold (K/s)
+#define THERMAL_MODEL_E3D_REVO_W 0.85     // Default warning threshold (K/s)
 #define THERMAL_MODEL_E3D_REVO_E -7.00     // Default error threshold (K/s)
 
 // fall-back resistance vector (R0-15)
