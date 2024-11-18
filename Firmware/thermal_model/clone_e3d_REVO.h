@@ -84,25 +84,6 @@
 // Recv: echo:  M310 I15 R7.67
 // Recv: echo:  M310 P38.00 U0.0000 V1.00 C12.28 D0.0650 L2160 S1 B1 E1.74 W1.20 T-7.00
 
-// NEW
-// Recv: echo:Thermal Model settings:
-// Recv: echo:  M310 I0 R12.98
-// Recv: echo:  M310 I1 R12.39
-// Recv: echo:  M310 I2 R11.81
-// Recv: echo:  M310 I3 R10.65
-// Recv: echo:  M310 I4 R10.33
-// Recv: echo:  M310 I5 R10.01
-// Recv: echo:  M310 I6 R9.70
-// Recv: echo:  M310 I7 R9.38
-// Recv: echo:  M310 I8 R9.24
-// Recv: echo:  M310 I9 R9.11
-// Recv: echo:  M310 I10 R8.97
-// Recv: echo:  M310 I11 R8.83
-// Recv: echo:  M310 I12 R8.75
-// Recv: echo:  M310 I13 R8.66
-// Recv: echo:  M310 I14 R8.58
-// Recv: echo:  M310 I15 R8.49
-// Recv: echo:  M310 P38.00 U0.0000 V1.00 C12.28 D0.0650 L2160 S1 B1 E1.74 W1.20 T-7.00
 
 
 
