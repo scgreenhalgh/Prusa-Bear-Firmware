@@ -13,7 +13,7 @@
 #define THERMAL_MODEL_E3D_REVO_LAG 270    // sim. response lag (ms, 0-2160)
 
 #define THERMAL_MODEL_E3D_REVO_W 0.85     // Default warning threshold (K/s)
-#define THERMAL_MODEL_E3D_REVO_E -7.00     // Default error threshold (K/s)
+#define THERMAL_MODEL_E3D_REVO_E 1.23     // Default error threshold (K/s)
 
 // fall-back resistance vector (R0-15)
 #define THERMAL_MODEL_E3D_REVO_Rv {THERMAL_MODEL_E3D_REVO_R, 16.22, 15.49, 14.03, 13.62, 13.21, 12.80, 12.38, 12.18, 11.97, 11.77, 11.56, 11.46, 11.35, 11.25, 11.15}
