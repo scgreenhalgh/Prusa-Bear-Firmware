@@ -407,6 +407,12 @@ void lcd_createChar_P(uint8_t location, const CustomCharacter *char_p)
 	// ** ** ** e7 e6 e5 e4 a6
 	// ** ** ** e3 e2 e1 e0 a7
 	// 
+	// This is a fix for the european display character set. The original solid character is not available.
+	// colbyte data0 data1 data2 data3
+	//    a      b     c     d     e
+	// 
+	// ** ** ** 1f 1f 1f 1f 1f
+	//
 	// The bits marked as ** in the unpacked data are don't care and they will contain garbage.
 
 	uint8_t temp;
