@@ -886,7 +886,7 @@ void lcd_buttons_update(void)
 ////////////////////////////////////////////////////////////////////////////////
 // Custom character data
 
-// #define DEBUG_CUSTOM_CHARACTERS
+#define DEBUG_CUSTOM_CHARACTERS
 
 static void lcd_print_custom(uint8_t c) {
 	uint8_t charToSend = pgm_read_byte(&Font[c - 0x80].alternate); // in case no empty slot is found, use the alternate character.
