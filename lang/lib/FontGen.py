@@ -142,19 +142,16 @@ BUILTIN_CHARS = {
 
 # Mapping from LCD source encoding to unicode characters
 CUSTOM_CHARS = {}
-index = 0
 custom_chars_index = 0
 
-while index < len(FONT_TABLE):
+for index in range(len(FONT_TABLE)):
     char = chr(index + 0x80)
     if char in BUILTIN_CHARS:
-        custom_chars_index += 2
-        print(f"Skipping builtin char '{char}'")
-    else:
-        CUSTOM_CHARS.update({chr(custom_chars_index + 0x80): FONT_TABLE[index].utf})
-        print(f"Adding custom char '{FONT_TABLE[index].utf}' at '{custom_chars_index + 0x80:#x}'")
         custom_chars_index += 1
-    index += 1
+        print(f"Skipping address for builtin char '{custom_chars_index + 0x80:#x}'")
+    CUSTOM_CHARS.update({chr(custom_chars_index + 0x80): FONT_TABLE[index].utf})
+    print(f"Adding custom char '{FONT_TABLE[index].utf}' at '{custom_chars_index + 0x80:#x}'")
+    custom_chars_index += 1
 CUSTOM_CHARS.update(BUILTIN_CHARS)
 
 print(f"Original number of custom characters: {len(FONT_TABLE)}")
