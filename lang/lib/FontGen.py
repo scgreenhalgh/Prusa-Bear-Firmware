@@ -148,7 +148,7 @@ custom_chars_index = 0
 for index in range(len(FONT_TABLE)):
     char = chr(index + 0x80)
     if char in BUILTIN_CHARS:
-        custom_chars_index += 2
+        custom_chars_index += 1
         print(f"Skipping builtin char '{char}'")
     else:
         CUSTOM_CHARS.update({chr(custom_chars_index + 0x80): FONT_TABLE[index].utf})
