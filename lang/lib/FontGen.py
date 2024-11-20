@@ -145,20 +145,16 @@ CUSTOM_CHARS = {}
 custom_chars_index = 0
 
 for index in range(len(FONT_TABLE)):
-    char = chr(index + 0x80)
-    print(f"Checking address for '{(index + 0x80):#x}'")
-    if char in BUILTIN_CHARS:
-        print(f"Skipping address for builtin char '{custom_chars_index + 0x80:#x}'")
-        while True:
-            if chr(custom_chars_index + 0x80) in BUILTIN_CHARS:
-                custom_chars_index += 1
-                continue
-            else:
-                break
-        print(f"Next available spot is: '{custom_chars_index + 0x80:#x}'")
-    CUSTOM_CHARS.update({chr(custom_chars_index + 0x80): FONT_TABLE[index].utf})
+    char = chr(custom_chars_index + 0x80)
+    print(f"Checking address for '{(custom_chars_index + 0x80):#x}'")
+    while char in BUILTIN_CHARS or char in CUSTOM_CHARS:
+        print(f"Skipping address for builtin or existing custom char '{custom_chars_index + 0x80:#x}'")
+        custom_chars_index += 1
+        char = chr(custom_chars_index + 0x80)
+    CUSTOM_CHARS.update({char: FONT_TABLE[index].utf})
     print(f"Adding custom char '{FONT_TABLE[index].utf}' at '{custom_chars_index + 0x80:#x}'")
     custom_chars_index += 1
+
 CUSTOM_CHARS.update(BUILTIN_CHARS)
 
 print(f"Original number of custom characters: {len(FONT_TABLE)}")
