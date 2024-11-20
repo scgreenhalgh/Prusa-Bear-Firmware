@@ -148,7 +148,13 @@ for index in range(len(FONT_TABLE)):
     char = chr(index + 0x80)
     if char in BUILTIN_CHARS:
         print(f"Skipping address for builtin char '{custom_chars_index + 0x80:#x}'")
-        custom_chars_index += 1
+        while True:
+            custom_chars_index += 1
+            if chr(custom_chars_index + 0x80) in BUILTIN_CHARS:
+                continue
+            else:
+                break
+        print(f"Next available spot is: '{custom_chars_index + 0x80:#x}'")
     CUSTOM_CHARS.update({chr(custom_chars_index + 0x80): FONT_TABLE[index].utf})
     print(f"Adding custom char '{FONT_TABLE[index].utf}' at '{custom_chars_index + 0x80:#x}'")
     custom_chars_index += 1
