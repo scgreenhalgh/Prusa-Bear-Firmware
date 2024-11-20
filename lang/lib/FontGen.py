@@ -161,6 +161,11 @@ for k, v in BUILTIN_CHARS.items():
     # print(f"Adding builtin char '{v}' at '{ord(k):#x}'")
     CUSTOM_CHARS[k] = v
 
+CUSTOM_CHARS = dict(sorted(CUSTOM_CHARS.items()))
+
+# for k, v in CUSTOM_CHARS.items():
+#     print(f"Character: {v}, Address: {ord(k):#04x}")
+
 # print(f"Original number of custom characters: {len(FONT_TABLE)}")
 # print(f"Generated {len(CUSTOM_CHARS)} custom characters")
 
