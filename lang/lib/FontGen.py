@@ -29,6 +29,7 @@ FONT_TABLE = [
     CustomCharacter('â', 18, 'a'),
     # CustomCharacter('Â', 26, 'A'),
     CustomCharacter('Ä', 27, '\\xd1'),
+    CustomCharacter('ǎ', 19, 'a'),
     CustomCharacter('å', 20, 'a'),
     CustomCharacter('Å', 28, 'A'),
     CustomCharacter('æ', 21, '\\xd1'),
@@ -133,7 +134,7 @@ FONT_TABLE = [
 BUILTIN_CHARS = {
     '\xc7': '→',
     '\xc8': '←',
-    '\x84': 'ä',
+    # '\x84': 'ä',
     '\xea': 'µ', #on keyboard AltGr+m it is \xC2\xB5
     '\x94': 'ö',
     '\x81': 'ü',
