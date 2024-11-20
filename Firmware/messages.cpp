@@ -255,10 +255,10 @@ extern const char MSG_SLIGHT_SKEW [] PROGMEM_I1 = ISTR("Slight skew"); ////MSG_S
 extern const char MSG_SEVERE_SKEW [] PROGMEM_I1 = ISTR("Severe skew"); ////MSG_SEVERE_SKEW c=14
 extern const char MSG_MEASURED_OFFSET [] PROGMEM_I1 = ISTR("[0;0] point offset"); ////MSG_MEASURED_OFFSET c=20
 extern const char MSG_BABYSTEPPING_Z [] PROGMEM_I1 = ISTR("Adjusting Z"); ////MSG_BABYSTEPPING_Z c=13
-extern const char MSG_BED_CORRECTION_LEFT [] PROGMEM_I1 = ISTR("Left side [\xe4m]"); ////MSG_BED_CORRECTION_LEFT c=14
-extern const char MSG_BED_CORRECTION_RIGHT [] PROGMEM_I1 = ISTR("Right side[\xe4m]"); ////MSG_BED_CORRECTION_RIGHT c=14
-extern const char MSG_BED_CORRECTION_FRONT [] PROGMEM_I1 = ISTR("Front side[\xe4m]"); ////MSG_BED_CORRECTION_FRONT c=14
-extern const char MSG_BED_CORRECTION_REAR [] PROGMEM_I1 = ISTR("Rear side [\xe4m]"); ////MSG_BED_CORRECTION_REAR c=14
+extern const char MSG_BED_CORRECTION_LEFT [] PROGMEM_I1 = ISTR("Left side [\xeam]"); ////MSG_BED_CORRECTION_LEFT c=14
+extern const char MSG_BED_CORRECTION_RIGHT [] PROGMEM_I1 = ISTR("Right side[\xeam]"); ////MSG_BED_CORRECTION_RIGHT c=14
+extern const char MSG_BED_CORRECTION_FRONT [] PROGMEM_I1 = ISTR("Front side[\xeam]"); ////MSG_BED_CORRECTION_FRONT c=14
+extern const char MSG_BED_CORRECTION_REAR [] PROGMEM_I1 = ISTR("Rear side [\xeam]"); ////MSG_BED_CORRECTION_REAR c=14
 extern const char MSG_SET_TEMPERATURE [] PROGMEM_I1 = ISTR("Set temperature:"); ////MSG_SET_TEMPERATURE c=20
 extern const char MSG_WAITING_TEMP_PINDA [] PROGMEM_I1 = ISTR("Waiting for PINDA probe cooling"); ////MSG_WAITING_TEMP_PINDA c=20 r=3
 extern const char MSG_WAITING_TEMP [] PROGMEM_I1 = ISTR("Waiting for nozzle and bed cooling"); ////MSG_WAITING_TEMP c=20 r=4
