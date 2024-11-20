@@ -145,7 +145,7 @@ CUSTOM_CHARS = {}
 index = 0
 custom_chars_index = 0
 
-while index in len(FONT_TABLE):
+for index in range(len(FONT_TABLE)):
     char = chr(index + 0x80)
     if char in BUILTIN_CHARS:
         custom_chars_index += 2
