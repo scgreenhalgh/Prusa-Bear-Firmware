@@ -144,6 +144,7 @@ BUILTIN_CHARS = {
 CUSTOM_CHARS = {}
 custom_char_index = 0
 for index in range(len(FONT_TABLE)):
+    print(f"Current Index: {chr(index + 0x80)}")
     if chr(index + 0x80) in CUSTOM_CHARS:
         custom_char_index += 2
         continue
