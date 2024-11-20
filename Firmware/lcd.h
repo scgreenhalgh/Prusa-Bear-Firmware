@@ -171,7 +171,7 @@ private:
 ////////////////////////////////////
 
 //Custom characters defined in the first 8 characters of the LCD
-#define LCD_STR_ARROW_RIGHT  "\x7F" //from the default character set
+#define LCD_STR_ARROW_RIGHT  "\x8E" //from the default character set
 #define LCD_STR_ARROW_LEFT   "\x7F" //from the default character set
 // #define LCD_STR_ARROW_RIGHT  "\xC7" //from the european character set
 // #define LCD_STR_ARROW_LEFT   "\xC8" //from the european character set
