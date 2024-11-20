@@ -21,7 +21,7 @@ FONT_TABLE = [
     CustomCharacter('🕑', 7, '\\xe5'),
     CustomCharacter('⏬', 8, '\\x7e'),
     CustomCharacter('✔', 9, '\\x7e'),
-    CustomCharacter('█', 10, '\\xff'), # fix for the european LCD
+    CustomCharacter('█', 255, '\\xff'), # fix for the european LCD
     CustomCharacter('á', 16, 'a'),
     CustomCharacter('Á', 24, 'A'),
     CustomCharacter('à', 17, 'a'),
@@ -138,11 +138,12 @@ BUILTIN_CHARS = {
     '\xc7': '→',
     '\xc8': '←',
     '\xea': 'µ', #on keyboard AltGr+m it is \xC2\xB5
-    '\xff': '█', # not in the european LCD
+    # '\xff': '█', # not in the european LCD
 }
 
 # Mapping from LCD source encoding to unicode characters
 CUSTOM_CHARS = {}
+CUSTOM_CHARS_INDEXED = {}
 
 custom_chars_index = 0
 
@@ -151,9 +152,11 @@ for index in range(len(FONT_TABLE)):
     # print(f"Checking address for '{(custom_chars_index + 0x80):#x}'")
     while char in BUILTIN_CHARS or char in CUSTOM_CHARS:
         # print(f"Skipping address for builtin or existing custom char '{custom_chars_index + 0x80:#x}'")
+        CUSTOM_CHARS_INDEXED[custom_chars_index] = None
         custom_chars_index += 1
         char = chr(custom_chars_index + 0x80)
     CUSTOM_CHARS.update({char: FONT_TABLE[index].utf})
+    CUSTOM_CHARS_INDEXED.update({custom_chars_index: FONT_TABLE[index]})
     # print(f"Adding custom char '{FONT_TABLE[index].utf}' at '{custom_chars_index + 0x80:#x}'")
     custom_chars_index += 1
 
@@ -164,8 +167,8 @@ for k, v in BUILTIN_CHARS.items():
 
 CUSTOM_CHARS = dict(sorted(CUSTOM_CHARS.items()))
 
-for k, v in CUSTOM_CHARS.items():
-    print(f"Character: {v}, Address: {ord(k):#04x}")
+# for k, v in CUSTOM_CHARS.items():
+#     print(f"Character: {v}, Address: {ord(k):#04x}")
 
 # print(f"Original number of custom characters: {len(FONT_TABLE)}")
 # print(f"Generated {len(CUSTOM_CHARS)} custom characters")
@@ -173,7 +176,7 @@ for k, v in CUSTOM_CHARS.items():
 INVERSE_CUSTOM_CHARS = {v: k for k, v in CUSTOM_CHARS.items()}
 
 def generateLineInTable(index, chars):
-    pixels = chars[FONT_TABLE[index].charListIndex]["PIXELS"].split(',')
+    pixels = chars[CUSTOM_CHARS_INDEXED[index].charListIndex]["PIXELS"].split(',')
     
     # Generate the rows binary data
     rows = []
@@ -194,7 +197,7 @@ def generateLineInTable(index, chars):
     line = f"{{0x{colByte:02X}, {{"
     for r in compressedRows:
         line += f"0x{r:02X}, "
-    line += f"}}, '{FONT_TABLE[index].alternate}'}}, // index=0x{index + 0x80:02X}, utf8='{FONT_TABLE[index].utf}'"
+    line += f"}}, '{CUSTOM_CHARS_INDEXED[index].alternate}'}}, // index=0x{index + 0x80:02X}, utf8='{CUSTOM_CHARS_INDEXED[index].utf}'"
     return line
 
 def generateFont():
@@ -204,8 +207,11 @@ def generateFont():
     CharList = [Char.attrib for Char in root.iter("CHAR")]
     
     f = open(os.path.join(sys.path[0], "../../Firmware/FontTable.h"), "w", encoding='utf8')
-    for index in range(len(FONT_TABLE)):
-        f.write(generateLineInTable(index, CharList) + '\n')
+    for index in range(len(CUSTOM_CHARS_INDEXED)):
+        if CUSTOM_CHARS_INDEXED[index] is not None:
+            f.write(generateLineInTable(index, CharList) + '\n')
+        else:
+            continue
     f.close()
 
 def main():
