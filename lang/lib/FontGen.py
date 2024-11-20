@@ -132,12 +132,12 @@ FONT_TABLE = [
 ]
 
 BUILTIN_CHARS = {
+    '\x81': 'ü',
+    '\x84': 'ä',
+    '\x94': 'ö',
     '\xc7': '→',
     '\xc8': '←',
-    '\x84': 'ä',
     '\xea': 'µ', #on keyboard AltGr+m it is \xC2\xB5
-    '\x94': 'ö',
-    '\x81': 'ü',
     '\xff': '█', # not in the european LCD
 }
 
