@@ -21,7 +21,7 @@ FONT_TABLE = [
     CustomCharacter('🕑', 7, '\\xe5'),
     CustomCharacter('⏬', 8, '\\x7e'),
     CustomCharacter('✔', 9, '\\x7e'),
-    # CustomCharacter('█', 10, '\\xff'), # fix for the european LCD
+    CustomCharacter('█', 10, '\\xff'), # fix for the european LCD
     CustomCharacter('á', 16, 'a'),
     CustomCharacter('Á', 24, 'A'),
     CustomCharacter('à', 17, 'a'),
@@ -137,7 +137,7 @@ BUILTIN_CHARS = {
     '\xe4': 'µ', #on keyboard AltGr+m it is \xC2\xB5
     '\xef': 'ö',
     '\xf5': 'ü',
-    '\xff': '█', # not in the european LCD
+    # '\xff': '█', # not in the european LCD
 }
 
 # Mapping from LCD source encoding to unicode characters
