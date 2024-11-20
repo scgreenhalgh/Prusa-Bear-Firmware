@@ -131,7 +131,7 @@ FONT_TABLE = [
 ]
 
 BUILTIN_CHARS = {
-    '\x81': '→',
+    '\xc7': '→',
     '\xc8': '←',
     '\xe1': 'ä',
     '\xe4': 'µ', #on keyboard AltGr+m it is \xC2\xB5
@@ -142,12 +142,17 @@ BUILTIN_CHARS = {
 
 # Mapping from LCD source encoding to unicode characters
 CUSTOM_CHARS = {}
-for index in range(len(FONT_TABLE)):
+index = 0
+custom_chars_index = 0
+
+for index in len(FONT_TABLE):
     char = chr(index + 0x80)
     if char in BUILTIN_CHARS:
-        print(f"Duplicate character {char} in FONT_TABLE")
+        custom_chars_index += 2
+        print(f"Skipping builtin char '{char}'")
     else:
-        CUSTOM_CHARS.update({chr(index + 0x80): FONT_TABLE[index].utf})
+        CUSTOM_CHARS.update({char: FONT_TABLE[font_table_index].utf})
+        custom_chars_index += 1
 CUSTOM_CHARS.update(BUILTIN_CHARS)
 
 INVERSE_CUSTOM_CHARS = {v: k for k, v in CUSTOM_CHARS.items()}
