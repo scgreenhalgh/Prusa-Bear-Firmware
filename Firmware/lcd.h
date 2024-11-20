@@ -176,15 +176,15 @@ private:
 #define LCD_STR_ARROW_RIGHT  "\xC7" //from the european character set
 #define LCD_STR_ARROW_LEFT   "\xC8" //from the european character set
 #define LCD_STR_BEDTEMP      "\x80"
-#define LCD_STR_DEGREE       "\x81"
-#define LCD_STR_THERMOMETER  "\x82"
-#define LCD_STR_UPLEVEL      "\x83"
-#define LCD_STR_REFRESH      "\x84"
-#define LCD_STR_FOLDER       "\x85"
-#define LCD_STR_FEEDRATE     "\x86"
-#define LCD_STR_CLOCK        "\x87"
-#define LCD_STR_ARROW_2_DOWN "\x88"
-#define LCD_STR_CONFIRM      "\x89"
+#define LCD_STR_DEGREE       "\x82"
+#define LCD_STR_THERMOMETER  "\x83"
+#define LCD_STR_UPLEVEL      "\x85"
+#define LCD_STR_REFRESH      "\x86"
+#define LCD_STR_FOLDER       "\x87"
+#define LCD_STR_FEEDRATE     "\x88"
+#define LCD_STR_CLOCK        "\x89"
+#define LCD_STR_ARROW_2_DOWN "\x8A"
+#define LCD_STR_CONFIRM      "\x8B"
 #define LCD_STR_SOLID_BLOCK  "\xFF"  //from the default character set
 // #define LCD_STR_SOLID_BLOCK  "\x11"  //from the european character set
 
