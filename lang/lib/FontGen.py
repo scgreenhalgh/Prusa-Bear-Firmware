@@ -144,12 +144,12 @@ BUILTIN_CHARS = {
 CUSTOM_CHARS = {}
 custom_char_index = 0
 for index in range(len(FONT_TABLE)):
-    print(f"Current Index: {chr(index + 0x80)}")
+    print(f"Current Index: {custom_char_index}")
     if chr(index + 0x80) in CUSTOM_CHARS:
         custom_char_index += 2
         continue
     else:
-        CUSTOM_CHARS.update({chr(index + 0x80): FONT_TABLE[custom_char_index].utf})
+        CUSTOM_CHARS.update({chr(custom_char_index + 0x80): FONT_TABLE[custom_char_index].utf})
         custom_char_index += 1
     print(f"Custom character {FONT_TABLE[index].utf} at index 0x{index + 0x80:02X}")
 CUSTOM_CHARS.update(BUILTIN_CHARS)
