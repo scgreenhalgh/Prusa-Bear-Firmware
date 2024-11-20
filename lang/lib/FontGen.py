@@ -146,6 +146,7 @@ custom_chars_index = 0
 
 for index in range(len(FONT_TABLE)):
     char = chr(index + 0x80)
+    print(f"Checking address for '{char:#x}'")
     if char in BUILTIN_CHARS:
         print(f"Skipping address for builtin char '{custom_chars_index + 0x80:#x}'")
         while True:
