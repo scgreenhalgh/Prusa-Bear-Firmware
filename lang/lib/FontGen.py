@@ -134,7 +134,7 @@ FONT_TABLE = [
 BUILTIN_CHARS = {
     '\xc7': '→',
     '\xc8': '←',
-    # '\x84': 'ä',
+    '\xe1': 'ä',
     '\xea': 'µ', #on keyboard AltGr+m it is \xC2\xB5
     '\x94': 'ö',
     '\x81': 'ü',
