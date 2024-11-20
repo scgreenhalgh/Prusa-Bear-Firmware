@@ -142,15 +142,12 @@ BUILTIN_CHARS = {
 
 # Mapping from LCD source encoding to unicode characters
 CUSTOM_CHARS = {}
-custom_char_index = 0
 for index in range(len(FONT_TABLE)):
-    print (f"index: {chr(custom_char_index + 0x80)}")
-    if chr(custom_char_index + 0x80) in CUSTOM_CHARS:
-        print(f"I jumped at: {chr(custom_char_index + 0x80)}")
-        custom_char_index += 2
+    char = chr(index + 0x80)
+    if char in CUSTOM_CHARS:
+        print(f"Duplicate character {char} in FONT_TABLE")
     else:
-        CUSTOM_CHARS.update({chr(custom_char_index + 0x80): FONT_TABLE[custom_char_index].utf})
-        custom_char_index += 1
+        CUSTOM_CHARS.update({chr(index + 0x80): FONT_TABLE[index].utf})
 CUSTOM_CHARS.update(BUILTIN_CHARS)
 
 INVERSE_CUSTOM_CHARS = {v: k for k, v in CUSTOM_CHARS.items()}
