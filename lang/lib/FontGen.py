@@ -21,7 +21,7 @@ FONT_TABLE = [
     CustomCharacter('🕑', 7, '\\xe5'),
     CustomCharacter('⏬', 8, '\\x7e'),
     CustomCharacter('✔', 9, '\\x7e'),
-    CustomCharacter('█', 10, '\\xff'), # fix for the european LCD
+    # CustomCharacter('█', 10, '\\xff'), # fix for the european LCD
     CustomCharacter('á', 16, 'a'),
     CustomCharacter('Á', 24, 'A'),
     CustomCharacter('à', 17, 'a'),
