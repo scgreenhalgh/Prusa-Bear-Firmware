@@ -142,7 +142,7 @@ BUILTIN_CHARS = {
 
 # Mapping from LCD source encoding to unicode characters
 CUSTOM_CHARS = {}
-for index in range(len(FONT_TABLE)):
+for index in range(len(FONT_TABLE)+len(BUILTIN_CHARS)):
     if chr(index + 0x80) in CUSTOM_CHARS:
         continue
     else:
