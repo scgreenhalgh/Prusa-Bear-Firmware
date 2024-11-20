@@ -148,14 +148,13 @@ custom_chars_index = 0
 while index < len(FONT_TABLE):
     char = chr(index + 0x80)
     if char in BUILTIN_CHARS:
-        custom_chars_index += 1
+        custom_chars_index += 2
         print(f"Skipping builtin char '{char}'")
-        break
     else:
         CUSTOM_CHARS.update({chr(custom_chars_index + 0x80): FONT_TABLE[index].utf})
         print(f"Adding custom char '{FONT_TABLE[index].utf}' at '{custom_chars_index + 0x80:#x}'")
         custom_chars_index += 1
-        index += 1
+    index += 1
 CUSTOM_CHARS.update(BUILTIN_CHARS)
 
 print(f"Original number of custom characters: {len(FONT_TABLE)}")
