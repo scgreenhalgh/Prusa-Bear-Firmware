@@ -144,7 +144,7 @@ BUILTIN_CHARS = {
 CUSTOM_CHARS = {}
 custom_char_index = 0
 for index in range(len(FONT_TABLE)):
-    if chr(index + 0x80) in CUSTOM_CHARS:
+    if chr(custom_char_index + 0x80) in CUSTOM_CHARS:
         print(f"I jumped at: {chr(custom_char_index + 0x80)}")
         custom_char_index += 2
     else:
