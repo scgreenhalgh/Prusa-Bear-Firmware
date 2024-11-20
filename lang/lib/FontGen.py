@@ -143,6 +143,7 @@ BUILTIN_CHARS = {
 
 # Mapping from LCD source encoding to unicode characters
 CUSTOM_CHARS = {}
+
 custom_chars_index = 0
 
 for index in range(len(FONT_TABLE)):

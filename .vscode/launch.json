@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Python: FontGen",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/lang/lib/FontGen.py",
+        "console": "integratedTerminal",
+        "pythonPath": "/Users/seangreenhalgh/.pyenv/versions/3.10.15/envs/Bear-Firmware-v3.14.0-eugene/bin/python"
+      }
+    ]
+  }
