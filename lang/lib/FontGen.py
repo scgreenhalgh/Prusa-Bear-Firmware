@@ -151,7 +151,7 @@ for index in range(len(FONT_TABLE)):
     else:
         CUSTOM_CHARS.update({chr(custom_char_index + 0x80): FONT_TABLE[custom_char_index].utf})
         custom_char_index += 1
-    print(f"Custom character {FONT_TABLE[index].utf} at index 0x{index + 0x80:02X}")
+    print(f"Custom character {FONT_TABLE[custom_char_index].utf} at index 0x{custom_char_index + 0x80:02X}")
 CUSTOM_CHARS.update(BUILTIN_CHARS)
 
 INVERSE_CUSTOM_CHARS = {v: k for k, v in CUSTOM_CHARS.items()}
