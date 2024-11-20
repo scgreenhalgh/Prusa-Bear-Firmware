@@ -137,7 +137,7 @@ BUILTIN_CHARS = {
     '\xea': 'µ', #on keyboard AltGr+m it is \xC2\xB5
     '\x94': 'ö',
     '\x81': 'ü',
-    # '\xff': '█', # not in the european LCD
+    '\xff': '█', # not in the european LCD
 }
 
 # Mapping from LCD source encoding to unicode characters
@@ -146,19 +146,19 @@ custom_chars_index = 0
 
 for index in range(len(FONT_TABLE)):
     char = chr(custom_chars_index + 0x80)
-    print(f"Checking address for '{(custom_chars_index + 0x80):#x}'")
+    # print(f"Checking address for '{(custom_chars_index + 0x80):#x}'")
     while char in BUILTIN_CHARS or char in CUSTOM_CHARS:
-        print(f"Skipping address for builtin or existing custom char '{custom_chars_index + 0x80:#x}'")
+        # print(f"Skipping address for builtin or existing custom char '{custom_chars_index + 0x80:#x}'")
         custom_chars_index += 1
         char = chr(custom_chars_index + 0x80)
     CUSTOM_CHARS.update({char: FONT_TABLE[index].utf})
-    print(f"Adding custom char '{FONT_TABLE[index].utf}' at '{custom_chars_index + 0x80:#x}'")
+    # print(f"Adding custom char '{FONT_TABLE[index].utf}' at '{custom_chars_index + 0x80:#x}'")
     custom_chars_index += 1
 
 CUSTOM_CHARS.update(BUILTIN_CHARS)
 
-print(f"Original number of custom characters: {len(FONT_TABLE)}")
-print(f"Generated {len(CUSTOM_CHARS)} custom characters")
+# print(f"Original number of custom characters: {len(FONT_TABLE)}")
+# print(f"Generated {len(CUSTOM_CHARS)} custom characters")
 
 INVERSE_CUSTOM_CHARS = {v: k for k, v in CUSTOM_CHARS.items()}
 
