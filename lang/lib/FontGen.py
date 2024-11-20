@@ -147,7 +147,6 @@ for index in range(len(FONT_TABLE)):
     print(f"Current Index: {custom_char_index}")
     if chr(index + 0x80) in CUSTOM_CHARS:
         custom_char_index += 2
-        continue
     else:
         CUSTOM_CHARS.update({chr(custom_char_index + 0x80): FONT_TABLE[custom_char_index].utf})
         print(f"Added: {chr(custom_char_index + 0x80)}: {FONT_TABLE[custom_char_index].utf}")
