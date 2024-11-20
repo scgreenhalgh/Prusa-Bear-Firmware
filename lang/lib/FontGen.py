@@ -134,7 +134,7 @@ FONT_TABLE = [
 BUILTIN_CHARS = {
     '\xc7': '→',
     '\xc8': '←',
-    '\xe1': 'ä',
+    '\x84': 'ä',
     '\xea': 'µ', #on keyboard AltGr+m it is \xC2\xB5
     '\x94': 'ö',
     '\x81': 'ü',
@@ -156,7 +156,10 @@ for index in range(len(FONT_TABLE)):
     # print(f"Adding custom char '{FONT_TABLE[index].utf}' at '{custom_chars_index + 0x80:#x}'")
     custom_chars_index += 1
 
-CUSTOM_CHARS.update(BUILTIN_CHARS)
+# Add BUILTIN_CHARS to CUSTOM_CHARS at the correct indexes
+for k, v in BUILTIN_CHARS.items():
+    # print(f"Adding builtin char '{v}' at '{ord(k):#x}'")
+    CUSTOM_CHARS[k] = v
 
 # print(f"Original number of custom characters: {len(FONT_TABLE)}")
 # print(f"Generated {len(CUSTOM_CHARS)} custom characters")
