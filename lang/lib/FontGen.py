@@ -157,6 +157,7 @@ CUSTOM_CHARS.update(BUILTIN_CHARS)
 
 print(f"Original number of custom characters: {len(FONT_TABLE)}")
 print(f"Generated {len(CUSTOM_CHARS)} custom characters")
+print(f"Char at 0xc7: {char(CUSTOM_CHARS[0xc7])}")
 
 INVERSE_CUSTOM_CHARS = {v: k for k, v in CUSTOM_CHARS.items()}
 
