@@ -171,10 +171,10 @@ private:
 ////////////////////////////////////
 
 //Custom characters defined in the first 8 characters of the LCD
-#define LCD_STR_ARROW_RIGHT  "\x7E" //from the default character set
-#define LCD_STR_ARROW_LEFT   "\x7F" //from the default character set
-// #define LCD_STR_ARROW_RIGHT  "\xC7" //from the european character set
-// #define LCD_STR_ARROW_LEFT   "\xC8" //from the european character set
+// #define LCD_STR_ARROW_RIGHT  "\x7E" //from the default character set
+// #define LCD_STR_ARROW_LEFT   "\x7F" //from the default character set
+#define LCD_STR_ARROW_RIGHT  "\x7C" //from the european character set
+#define LCD_STR_ARROW_LEFT   "\x8C" //from the european character set
 #define LCD_STR_BEDTEMP      "\x80"
 #define LCD_STR_DEGREE       "\x81"
 #define LCD_STR_THERMOMETER  "\x82"
@@ -185,8 +185,8 @@ private:
 #define LCD_STR_CLOCK        "\x87"
 #define LCD_STR_ARROW_2_DOWN "\x88"
 #define LCD_STR_CONFIRM      "\x89"
-// #define LCD_STR_SOLID_BLOCK  "\xFF"  //from the default character set
-#define LCD_STR_SOLID_BLOCK  "\x11"  //from the european character set
+#define LCD_STR_SOLID_BLOCK  "\xFF"  //from the default character set
+// #define LCD_STR_SOLID_BLOCK  "\x11"  //from the european character set
 
 extern void lcd_frame_start();
 
