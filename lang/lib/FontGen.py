@@ -122,9 +122,9 @@ FONT_TABLE = [
     # CustomCharacter('Ÿ', 139, 'Y'),
     CustomCharacter('ź', 140, 'z'),
     # CustomCharacter('Ź', 144, 'Z'),
-    CustomCharacter('ž', 151, 'z'),
-    CustomCharacter('Ž', 155, 'Z'),
-    CustomCharacter('ż', 152, 'z'),
+    CustomCharacter('ž', 141, 'z'),
+    CustomCharacter('Ž', 145, 'Z'),
+    CustomCharacter('ż', 142, 'z'),
     # CustomCharacter('Ż', 146, 'Z'),
     # CustomCharacter('¿', 254, ' '),
     # CustomCharacter('¡', 255, ' '),
@@ -133,11 +133,11 @@ FONT_TABLE = [
 BUILTIN_CHARS = {
     '\xc7': '→',
     '\xc8': '←',
-    '\xe1': 'ä',
-    '\xe4': 'µ', #on keyboard AltGr+m it is \xC2\xB5
-    '\xef': 'ö',
-    '\xf5': 'ü',
-    '\xff': '█', # not in the european LCD
+    # '\xe1': 'ä',
+    # '\xe4': 'µ', #on keyboard AltGr+m it is \xC2\xB5
+    # '\xef': 'ö',
+    # '\xf5': 'ü',
+    # '\xff': '█', # not in the european LCD
 }
 
 # Mapping from LCD source encoding to unicode characters
