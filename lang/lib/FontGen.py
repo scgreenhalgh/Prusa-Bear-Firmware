@@ -144,7 +144,7 @@ BUILTIN_CHARS = {
 CUSTOM_CHARS = {}
 for index in range(len(FONT_TABLE)):
     char = chr(index + 0x80)
-    if char in CUSTOM_CHARS:
+    if char in BUILTIN_CHARS:
         print(f"Duplicate character {char} in FONT_TABLE")
     else:
         CUSTOM_CHARS.update({chr(index + 0x80): FONT_TABLE[index].utf})
