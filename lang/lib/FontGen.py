@@ -145,15 +145,18 @@ CUSTOM_CHARS = {}
 index = 0
 custom_chars_index = 0
 
-for index in len(FONT_TABLE):
+while index in len(FONT_TABLE):
     char = chr(index + 0x80)
     if char in BUILTIN_CHARS:
         custom_chars_index += 2
         print(f"Skipping builtin char '{char}'")
     else:
-        CUSTOM_CHARS.update({char: FONT_TABLE[font_table_index].utf})
+        CUSTOM_CHARS.update({char: FONT_TABLE[custom_chars_index].utf})
         custom_chars_index += 1
 CUSTOM_CHARS.update(BUILTIN_CHARS)
+
+print(f"Original number of custom characters: {len(FONT_TABLE)}")
+print(f"Generated {len(CUSTOM_CHARS)} custom characters")
 
 INVERSE_CUSTOM_CHARS = {v: k for k, v in CUSTOM_CHARS.items()}
 
