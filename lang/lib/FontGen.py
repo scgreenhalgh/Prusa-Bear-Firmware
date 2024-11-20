@@ -143,9 +143,10 @@ BUILTIN_CHARS = {
 # Mapping from LCD source encoding to unicode characters
 CUSTOM_CHARS = {}
 for index in range(len(FONT_TABLE)):
-    if chr(index + 0x80) in BUILTIN_CHARS:
+    if chr(index + 0x80) in CUSTOM_CHARS:
         continue
-    CUSTOM_CHARS.update({chr(index + 0x80): FONT_TABLE[index].utf})
+    else:
+        CUSTOM_CHARS.update({chr(index + 0x80): FONT_TABLE[index].utf})
 CUSTOM_CHARS.update(BUILTIN_CHARS)
 
 INVERSE_CUSTOM_CHARS = {v: k for k, v in CUSTOM_CHARS.items()}
