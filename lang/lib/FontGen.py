@@ -133,10 +133,10 @@ FONT_TABLE = [
 BUILTIN_CHARS = {
     '\xc7': '→',
     '\xc8': '←',
-    '\xe1': 'ä',
-    '\xe4': 'µ', #on keyboard AltGr+m it is \xC2\xB5
-    '\xef': 'ö',
-    '\xf5': 'ü',
+    '\x84': 'ä',
+    '\xea': 'µ', #on keyboard AltGr+m it is \xC2\xB5
+    '\x94': 'ö',
+    '\x81': 'ü',
     # '\xff': '█', # not in the european LCD
 }
 
