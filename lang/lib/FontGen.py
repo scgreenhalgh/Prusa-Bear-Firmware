@@ -132,7 +132,7 @@ FONT_TABLE = [
 
 BUILTIN_CHARS = {
     '\xc7': '→',
-    # '\xc8': '←',
+    '\xc8': '←',
     '\xe1': 'ä',
     '\xe4': 'µ', #on keyboard AltGr+m it is \xC2\xB5
     '\xef': 'ö',
@@ -143,6 +143,8 @@ BUILTIN_CHARS = {
 # Mapping from LCD source encoding to unicode characters
 CUSTOM_CHARS = {}
 for index in range(len(FONT_TABLE)):
+    if chr(index + 0x80) in BUILTIN_CHARS:
+        continue
     CUSTOM_CHARS.update({chr(index + 0x80): FONT_TABLE[index].utf})
 CUSTOM_CHARS.update(BUILTIN_CHARS)
 
