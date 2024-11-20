@@ -163,8 +163,8 @@ for k, v in BUILTIN_CHARS.items():
 
 CUSTOM_CHARS = dict(sorted(CUSTOM_CHARS.items()))
 
-# for k, v in CUSTOM_CHARS.items():
-#     print(f"Character: {v}, Address: {ord(k):#04x}")
+for k, v in CUSTOM_CHARS.items():
+    print(f"Character: {v}, Address: {ord(k):#04x}")
 
 # print(f"Original number of custom characters: {len(FONT_TABLE)}")
 # print(f"Generated {len(CUSTOM_CHARS)} custom characters")
