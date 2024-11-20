@@ -131,13 +131,13 @@ FONT_TABLE = [
 ]
 
 BUILTIN_CHARS = {
-    '\x7e': '→',
-    '\x7f': '←',
+    '\xc7': '→',
+    '\xc8': '←',
     '\xe1': 'ä',
     '\xe4': 'µ', #on keyboard AltGr+m it is \xC2\xB5
     '\xef': 'ö',
     '\xf5': 'ü',
-    # '\xff': '█', // not in the european LCD
+    '\xff': '█', # not in the european LCD
 }
 
 # Mapping from LCD source encoding to unicode characters
