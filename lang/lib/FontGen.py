@@ -138,7 +138,7 @@ BUILTIN_CHARS = {
     '\xc7': '→',
     '\xc8': '←',
     '\xea': 'µ', #on keyboard AltGr+m it is \xC2\xB5
-    # '\xff': '█', # not in the european LCD
+    '\xff': '█',
 }
 
 # Mapping from LCD source encoding to unicode characters
